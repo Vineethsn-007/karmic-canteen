@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "136044007781",
+    "project_id": "madhwa-hackathon",
+    "storage_bucket": "madhwa-hackathon.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:136044007781:android:237c8d7fd49ba0241c518c",
+        "android_client_info": {
+          "package_name": "com.example.karmic_canteen_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDDVqjZdw5DIz5okGb7c-L5KFA0PA7cQgo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
