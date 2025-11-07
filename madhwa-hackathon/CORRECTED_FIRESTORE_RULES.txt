@@ -1,0 +1,48 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // ✅ YOUR EXISTING APP RULES (Keep these as-is)
+    match /users/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+    
+    match /menus/{menuId} {
+      allow read: if request.auth != null;
+      allow write: if request.auth != null && 
+                   get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin';
+    }
+    
+    match /mealSelections/{date}/selections/{email} {
+      allow read, write: if request.auth != null && request.auth.token.email == email;
+    }
+    
+    match /workModes/{date}/modes/{email} {
+      allow read, write: if request.auth != null && request.auth.token.email == email;
+    }
+    
+    match /settings/{document=**} {
+      allow read: if request.auth != null;
+      allow write: if request.auth != null && 
+                   get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin';
+    }
+    
+    // ✅ NEW: ESP32-SPECIFIC RULES (Add these)
+    // Allow ESP32 to read RFID cards collection
+    match /rfidCards/{uid} {
+      allow read: if request.auth != null && 
+                  (request.auth.token.email == "john.doe@karmic.com" || 
+                   get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin');
+      allow write: if request.auth != null && 
+                   get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin';
+    }
+    
+    // Allow ESP32 to READ meal selections (not write)
+    match /mealSelections/{date}/selections/{email} {
+      allow read: if request.auth != null && 
+                  (request.auth.token.email == email || 
+                   request.auth.token.email == "john.doe@karmic.com");
+      allow write: if request.auth != null && request.auth.token.email == email;
+    }
+  }
+}

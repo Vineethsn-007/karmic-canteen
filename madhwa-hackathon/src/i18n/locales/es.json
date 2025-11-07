@@ -1,0 +1,97 @@
+{
+  "common": {
+    "appName": "🍽️ Comedor Kármico",
+    "appTagline": "Comida Buena y Buen Sabor"
+  },
+  "app": {
+    "title": "Comedor Kármico",
+    "tagline": "Comida Buena y Buen Sabor"
+  },
+  "auth": {
+    "signIn": "Iniciar Sesión",
+    "logout": "Cerrar Sesión",
+    "email": "Correo Electrónico",
+    "password": "Contraseña",
+    "signingIn": "Iniciando sesión...",
+    "signInMessage": "Inicia sesión con tus credenciales",
+    "noAccount": "No se encontró ninguna cuenta con este correo.",
+    "incorrectPassword": "Contraseña incorrecta. Inténtalo de nuevo.",
+    "invalidCredentials": "Correo o contraseña inválidos.",
+    "networkError": "Error de red. Verifica tu conexión.",
+    "loginError": "Error al iniciar sesión. Verifica tus credenciales.",
+    "tooManyAttempts": "Demasiados intentos fallidos. Inténtalo más tarde.",
+    "placeholder": {
+      "email": "tu.correo@karmicsolutions.com",
+      "password": "••••••••"
+    },
+    "quickTest": "Prueba Rápida:",
+    "employee": "Empleado (Jane)",
+    "admin": "Admin (John)"
+  },
+  "navbar": {
+    "logout": "Cerrar Sesión",
+    "selectLanguage": "Seleccionar Idioma",
+    "roleAdmin": "Administrador",
+    "roleEmployee": "Empleado"
+  },
+  "language": {
+    "select": "Seleccionar Idioma",
+    "english": "Inglés",
+    "spanish": "Español",
+    "hindi": "Hindi"
+  },
+  "dashboard": {
+    "mealSelection": "Selección de Comidas",
+    "selectMeals": "Selecciona tus comidas para mañana",
+    "deadline": "Plazo",
+    "remaining": "{{hours}}h {{minutes}}m restantes",
+    "deadlinePassed": "Plazo Vencido",
+    "noMenu": "No Hay Menú Disponible",
+    "noMenuText": "El menú de mañana aún no ha sido publicado.",
+    "contactAdmin": "Por favor, intenta más tarde o contacta al administrador del comedor.",
+    "breakfast": "Desayuno",
+    "lunch": "Almuerzo",
+    "snacks": "Refrigerios",
+    "noItems": "No hay elementos disponibles",
+    "select": "Seleccionar",
+    "selected": "✓ Seleccionado",
+    "summary": "Resumen de tu Selección",
+    "mealsSelected": "Comidas Seleccionadas:",
+    "status": "Estado:",
+    "unsavedChanges": "⚠ Cambios sin guardar",
+    "saved": "✓ Guardado",
+    "savePreferences": "Guardar Preferencias",
+    "noChanges": "Sin Cambios",
+    "helpText": "Puedes modificar tu selección hasta las {{time}} hoy"
+  },
+  "notifications": {
+    "enable": "Habilitar Notificaciones",
+    "enableReminders": "Recibe recordatorios diarios a las 8:00 AM para seleccionar tus comidas y alertas de confirmación.",
+    "maybeLater": "Quizás Luego",
+    "success": "Operación exitosa",
+    "error": "Algo salió mal",
+    "saved": "¡Preferencias de comida guardadas exitosamente!",
+    "saveFailed": "Error al guardar preferencias. Por favor, intenta de nuevo."
+  },
+  "admin": {
+    "dashboard": "Panel de Administración",
+    "manageMenus": "📋 Gestión de Menús",
+    "reports": "📊 Reportes y Análisis",
+    "settings": "⚙️ Configuración"
+  },
+  "buttons": {
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "submit": "Enviar",
+    "close": "Cerrar",
+    "delete": "Eliminar",
+    "edit": "Editar",
+    "done": "Hecho"
+  },
+  "status": {
+    "success": "Éxito",
+    "error": "Error",
+    "warning": "Advertencia",
+    "info": "Información"
+  }
+}

@@ -1,0 +1,72 @@
+/* LanguageSelector.css - Multilingual Language Switcher Styling */
+
+.language-selector {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.language-dropdown {
+  position: relative;
+}
+
+.language-select {
+  padding: 8px 12px;
+  border: 1.5px solid var(--accent-primary);
+  background: white;
+  color: var(--text-primary);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  font-family: var(--font-sans);
+  min-width: 140px;
+  text-align: center;
+}
+
+.language-select:hover {
+  border-color: #0052a3;
+  background: rgba(0, 102, 204, 0.05);
+  box-shadow: 0 2px 8px rgba(0, 102, 204, 0.15);
+}
+
+.language-select:focus {
+  outline: none;
+  border-color: #0052a3;
+  box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.2);
+}
+
+.language-select option {
+  background: white;
+  color: var(--text-primary);
+  padding: 8px;
+  font-weight: var(--font-weight-medium);
+}
+
+/* RTL Support */
+[dir="rtl"] .language-select {
+  text-align: right;
+  direction: rtl;
+}
+
+[dir="rtl"] .language-dropdown {
+  margin-left: 0;
+  margin-right: var(--space-sm);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .language-select {
+    min-width: 120px;
+    font-size: var(--font-size-xs);
+    padding: 6px 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .language-select {
+    min-width: 100px;
+    padding: 6px 8px;
+  }
+}

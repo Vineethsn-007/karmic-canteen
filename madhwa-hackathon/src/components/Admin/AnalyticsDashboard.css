@@ -1,0 +1,377 @@
+/* Analytics Dashboard - Modern Design */
+
+.analytics-dashboard {
+  padding: var(--space-lg);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.analytics-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-xl);
+  gap: var(--space-md);
+}
+
+.analytics-header > div {
+  flex: 1;
+}
+
+.analytics-header h2 {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  margin: 0 0 var(--space-xs) 0;
+}
+
+.last-updated {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  font-weight: var(--font-weight-medium);
+  display: block;
+}
+
+.refresh-btn {
+  white-space: nowrap;
+  padding: var(--space-sm) var(--space-lg);
+  font-size: var(--font-size-sm);
+}
+
+/* Stats Grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-md);
+  margin-bottom: var(--space-xl);
+}
+
+.stat-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.stat-card.full-width {
+  grid-column: 1 / -1;
+}
+
+.stat-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  flex-shrink: 0;
+}
+
+.stat-content {
+  flex: 1;
+}
+
+.stat-value {
+  font-size: 32px;
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.stat-label {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  font-weight: var(--font-weight-medium);
+}
+
+/* Participation Card */
+.participation-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: var(--space-xl);
+}
+
+.participation-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-md);
+}
+
+.participation-header h3 {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.participation-percentage {
+  font-size: 28px;
+  font-weight: var(--font-weight-bold);
+  color: #0891b2;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 12px;
+  background: #e5e7eb;
+  border-radius: 999px;
+  overflow: hidden;
+  margin-bottom: var(--space-sm);
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #0891b2 0%, #06b6d4 100%);
+  border-radius: 999px;
+  transition: width 0.6s ease;
+}
+
+.participation-text {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* Chart Section */
+.chart-section {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: var(--space-xl);
+}
+
+.chart-section h3 {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  margin: 0 0 var(--space-lg) 0;
+}
+
+.donut-chart-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: var(--space-lg);
+}
+
+.donut-chart {
+  width: 240px;
+  height: 240px;
+}
+
+.chart-legend {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-lg);
+  flex-wrap: wrap;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.legend-color {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+}
+
+.legend-label {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  font-weight: var(--font-weight-medium);
+}
+
+/* Meal Breakdown Section */
+.meal-breakdown-section {
+  margin-bottom: var(--space-xl);
+}
+
+.meal-breakdown-section h3 {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  margin: 0 0 var(--space-md) 0;
+}
+
+.meal-breakdown-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-md);
+  transition: all 0.3s ease;
+}
+
+.meal-breakdown-card:hover {
+  transform: translateX(4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.meal-icon-wrapper {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.meal-icon {
+  font-size: 28px;
+}
+
+.meal-info {
+  flex: 1;
+}
+
+.meal-info h4 {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  margin: 0 0 4px 0;
+}
+
+.meal-info p {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.meal-stats {
+  text-align: right;
+}
+
+.meal-count {
+  font-size: 28px;
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.meal-percentage {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  font-weight: var(--font-weight-medium);
+}
+
+/* Loading State */
+.loading-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--text-secondary);
+  font-size: var(--font-size-lg);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .analytics-dashboard {
+    padding: var(--space-md);
+  }
+
+  .analytics-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-xs);
+  }
+
+  .analytics-header h2 {
+    font-size: var(--font-size-xl);
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-card.full-width {
+    grid-column: 1;
+  }
+
+  .stat-value {
+    font-size: 28px;
+  }
+
+  .participation-percentage {
+    font-size: 24px;
+  }
+
+  .donut-chart {
+    width: 200px;
+    height: 200px;
+  }
+
+  .chart-legend {
+    gap: var(--space-md);
+  }
+
+  .meal-breakdown-card {
+    padding: var(--space-md);
+  }
+
+  .meal-icon-wrapper {
+    width: 48px;
+    height: 48px;
+  }
+
+  .meal-icon {
+    font-size: 24px;
+  }
+
+  .meal-count {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .analytics-dashboard {
+    padding: var(--space-sm);
+  }
+
+  .stat-card {
+    padding: var(--space-md);
+  }
+
+  .stat-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 24px;
+  }
+
+  .stat-value {
+    font-size: 24px;
+  }
+
+  .participation-card {
+    padding: var(--space-md);
+  }
+
+  .chart-section {
+    padding: var(--space-md);
+  }
+
+  .donut-chart {
+    width: 180px;
+    height: 180px;
+  }
+}

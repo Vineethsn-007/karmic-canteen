@@ -1,0 +1,28 @@
+============================================================
+   CanteenAI - Simple Prediction Dashboard
+============================================================
+
+HOW TO START:
+-------------
+1. Double-click: START.bat
+2. Open browser: http://localhost:5000
+
+WHAT YOU GET:
+-------------
+Two prediction windows:
+- Next Day Prediction (tomorrow's forecast)
+- Weekly Forecast (7-day predictions)
+
+HOW TO USE:
+-----------
+1. Click "Generate Prediction" for next day
+2. Click "Generate 7-Day Forecast" for weekly
+3. View results in tables below buttons
+
+THAT'S IT!
+----------
+Simple, clean, just predictions.
+
+To stop: Press Ctrl+C in the terminal window
+
+============================================================

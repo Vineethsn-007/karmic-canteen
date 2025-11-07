@@ -1,0 +1,97 @@
+{
+  "common": {
+    "appName": "🍽️ Karmic Canteen",
+    "appTagline": "Good Food and Good Taste"
+  },
+  "app": {
+    "title": "Karmic Canteen",
+    "tagline": "Good Food and Good Taste"
+  },
+  "auth": {
+    "signIn": "Sign In",
+    "logout": "Logout",
+    "email": "Email",
+    "password": "Password",
+    "signingIn": "Signing in...",
+    "signInMessage": "Sign in with your credentials",
+    "noAccount": "No account found with this email.",
+    "incorrectPassword": "Incorrect password. Please try again.",
+    "invalidCredentials": "Invalid email or password.",
+    "networkError": "Network error. Please check your connection.",
+    "loginError": "Failed to login. Please check your credentials.",
+    "tooManyAttempts": "Too many failed attempts. Please try again later.",
+    "placeholder": {
+      "email": "your.email@karmicsolutions.com",
+      "password": "••••••••"
+    },
+    "quickTest": "Quick Test Login:",
+    "employee": "Employee (Jane)",
+    "admin": "Admin (John)"
+  },
+  "navbar": {
+    "logout": "Logout",
+    "selectLanguage": "Select Language",
+    "roleAdmin": "Admin",
+    "roleEmployee": "Employee"
+  },
+  "language": {
+    "select": "Select Language",
+    "english": "English",
+    "spanish": "Spanish",
+    "hindi": "Hindi"
+  },
+  "dashboard": {
+    "mealSelection": "Meal Selection",
+    "selectMeals": "Select your meals for tomorrow",
+    "deadline": "Deadline",
+    "remaining": "{{hours}}h {{minutes}}m remaining",
+    "deadlinePassed": "Deadline Passed",
+    "noMenu": "No Menu Available",
+    "noMenuText": "The menu for tomorrow hasn't been published yet.",
+    "contactAdmin": "Please check back later or contact the canteen administrator.",
+    "breakfast": "Breakfast",
+    "lunch": "Lunch",
+    "snacks": "Snacks",
+    "noItems": "No items available",
+    "select": "Select",
+    "selected": "✓ Selected",
+    "summary": "Your Selection Summary",
+    "mealsSelected": "Meals Selected:",
+    "status": "Status:",
+    "unsavedChanges": "⚠ Unsaved changes",
+    "saved": "✓ Saved",
+    "savePreferences": "Save Preferences",
+    "noChanges": "No Changes",
+    "helpText": "You can modify your selection until {{time}} today"
+  },
+  "notifications": {
+    "enable": "Enable Notifications",
+    "enableReminders": "Get daily reminders at 8:00 AM to select your meals and confirmation alerts.",
+    "maybeLater": "Maybe Later",
+    "success": "Operation successful",
+    "error": "Something went wrong",
+    "saved": "Meal preferences saved successfully!",
+    "saveFailed": "Failed to save preferences. Please try again."
+  },
+  "admin": {
+    "dashboard": "Admin Dashboard",
+    "manageMenus": "📋 Menu Management",
+    "reports": "📊 Reports & Analytics",
+    "settings": "⚙️ Settings"
+  },
+  "buttons": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "submit": "Submit",
+    "close": "Close",
+    "delete": "Delete",
+    "edit": "Edit",
+    "done": "Done"
+  },
+  "status": {
+    "success": "Success",
+    "error": "Error",
+    "warning": "Warning",
+    "info": "Information"
+  }
+}

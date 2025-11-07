@@ -1,0 +1,311 @@
+{
+  "common": {
+    "appName": "Karmic Canteen",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "warning": "Warning",
+    "info": "Information",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "add": "Add",
+    "close": "Close",
+    "back": "Back",
+    "next": "Next",
+    "submit": "Submit",
+    "search": "Search",
+    "filter": "Filter",
+    "export": "Export",
+    "import": "Import",
+    "refresh": "Refresh",
+    "yes": "Yes",
+    "no": "No",
+    "ok": "OK",
+    "gotIt": "Got it!",
+    "learnMore": "Learn More"
+  },
+  "auth": {
+    "login": "Sign In",
+    "logout": "Logout",
+    "email": "Email",
+    "password": "Password",
+    "rememberMe": "Remember me",
+    "forgotPassword": "Forgot password?",
+    "signInTitle": "Sign in with your credentials",
+    "quickTestLogin": "Quick Test Login",
+    "employee": "Employee",
+    "admin": "Admin",
+    "signingIn": "Signing in...",
+    "errors": {
+      "invalidCredentials": "Invalid email or password.",
+      "userNotFound": "No account found with this email.",
+      "wrongPassword": "Incorrect password. Please try again.",
+      "tooManyAttempts": "Too many failed attempts. Please try again later.",
+      "networkError": "Network error. Please check your connection.",
+      "loginFailed": "Failed to login. Please check your credentials."
+    }
+  },
+  "navbar": {
+    "dashboard": "Dashboard",
+    "menu": "Menu",
+    "reports": "Reports",
+    "settings": "Settings",
+    "profile": "Profile",
+    "help": "Help",
+    "roleAdmin": "Admin",
+    "roleEmployee": "Employee"
+  },
+  "employee": {
+    "dashboard": {
+      "title": "📋 Meal Selection",
+      "subtitle": "Select your meals for tomorrow",
+      "deadline": {
+        "active": "⏰ {{time}} remaining",
+        "expired": "Deadline passed"
+      },
+      "dateCard": "📅 Menu for {{date}}",
+      "noMenu": {
+        "title": "No Menu Available",
+        "message": "The menu for tomorrow hasn't been published yet.",
+        "checkLater": "Please check back later."
+      },
+      "meals": {
+        "breakfast": "Breakfast",
+        "lunch": "Lunch",
+        "snacks": "Snacks",
+        "selectBreakfast": "Select Breakfast",
+        "deselectBreakfast": "Deselect Breakfast",
+        "selectLunch": "Select Lunch",
+        "deselectLunch": "Deselect Lunch",
+        "selectSnacks": "Select Snacks",
+        "deselectSnacks": "Deselect Snacks",
+        "noItems": "No items available"
+      },
+      "summary": {
+        "title": "Your Selection Summary",
+        "mealsSelected": "Meals Selected",
+        "totalItems": "Total Items",
+        "saveSelection": "Save Selection",
+        "helpText": "You can modify your selection until {{deadline}}"
+      },
+      "notifications": {
+        "enableTitle": "🔔 Enable Notifications",
+        "enableMessage": "Get daily reminders at 8:00 AM to select your meals and confirmation alerts.",
+        "enableButton": "Enable Notifications",
+        "maybeLater": "Maybe Later"
+      },
+      "success": {
+        "title": "Success!",
+        "message": "Your meal preferences have been saved successfully.",
+        "selectedMeals": "Selected Meals:",
+        "savedFor": "✓ Saved for {{date}}",
+        "canModify": "✓ You can modify until {{time}}"
+      },
+      "messages": {
+        "selectionSaved": "Your meal selection has been saved successfully!",
+        "selectionError": "Failed to save your selection. Please try again.",
+        "deadlinePassed": "The deadline for meal selection has passed.",
+        "noSelection": "Please select at least one meal."
+      }
+    }
+  },
+  "admin": {
+    "dashboard": {
+      "title": "⚙️ Admin Dashboard",
+      "subtitle": "Manage menus and view reports",
+      "tabs": {
+        "menuManager": "Menu Manager",
+        "reports": "Reports",
+        "settings": "Settings"
+      }
+    },
+    "menuManager": {
+      "title": "Menu Manager",
+      "selectDate": "Select Date",
+      "addMenu": "Add Menu",
+      "editMenu": "Edit Menu",
+      "deleteMenu": "Delete Menu",
+      "saveMenu": "Save Menu",
+      "menuFor": "Menu for {{date}}",
+      "meals": {
+        "breakfast": "Breakfast Items",
+        "lunch": "Lunch Items",
+        "snacks": "Snacks Items",
+        "addItem": "Add Item",
+        "itemName": "Item Name",
+        "enterItemName": "Enter item name"
+      },
+      "messages": {
+        "menuSaved": "Menu saved successfully!",
+        "menuDeleted": "Menu deleted successfully!",
+        "menuError": "Failed to save menu. Please try again.",
+        "noDate": "Please select a date.",
+        "noItems": "Please add at least one item."
+      }
+    },
+    "reports": {
+      "title": "📊 Reports Dashboard",
+      "subtitle": "View meal selection statistics and analytics",
+      "dateRange": "Date Range",
+      "from": "From",
+      "to": "To",
+      "generateReport": "Generate Report",
+      "exportCSV": "Export to CSV",
+      "stats": {
+        "totalEmployees": "Total Employees",
+        "totalSelections": "Total Selections",
+        "breakfastCount": "Breakfast",
+        "lunchCount": "Lunch",
+        "snacksCount": "Snacks",
+        "participationRate": "Participation Rate"
+      },
+      "chart": {
+        "title": "Meal Selection Trends",
+        "breakfast": "Breakfast",
+        "lunch": "Lunch",
+        "snacks": "Snacks"
+      },
+      "table": {
+        "date": "Date",
+        "employee": "Employee",
+        "breakfast": "Breakfast",
+        "lunch": "Lunch",
+        "snacks": "Snacks",
+        "timestamp": "Timestamp",
+        "noData": "No data available for selected date range."
+      },
+      "messages": {
+        "reportGenerated": "Report generated successfully!",
+        "reportError": "Failed to generate report. Please try again.",
+        "csvExported": "Report exported to CSV successfully!",
+        "csvError": "Failed to export report. Please try again."
+      }
+    },
+    "settings": {
+      "title": "⚙️ Settings",
+      "subtitle": "Configure application settings",
+      "deadline": {
+        "title": "Meal Selection Deadline",
+        "label": "Deadline Time",
+        "description": "Set the daily deadline for meal selection",
+        "save": "Save Deadline"
+      },
+      "notifications": {
+        "title": "Notification Settings",
+        "enableEmail": "Enable Email Notifications",
+        "enablePush": "Enable Push Notifications",
+        "reminderTime": "Reminder Time"
+      },
+      "quickPresets": {
+        "title": "Quick Presets",
+        "morning": "9:00 AM",
+        "afternoon": "3:00 PM",
+        "evening": "9:00 PM"
+      },
+      "messages": {
+        "settingsSaved": "Settings saved successfully!",
+        "settingsError": "Failed to save settings. Please try again."
+      }
+    }
+  },
+  "errors": {
+    "generic": "Something went wrong. Please try again.",
+    "network": "Network error. Please check your connection.",
+    "unauthorized": "You are not authorized to perform this action.",
+    "notFound": "The requested resource was not found.",
+    "serverError": "Server error. Please try again later.",
+    "validationError": "Please check your input and try again.",
+    "sessionExpired": "Your session has expired. Please login again."
+  },
+  "validation": {
+    "required": "This field is required",
+    "email": "Please enter a valid email address",
+    "minLength": "Minimum length is {{count}} characters",
+    "maxLength": "Maximum length is {{count}} characters",
+    "invalidFormat": "Invalid format",
+    "passwordMismatch": "Passwords do not match"
+  },
+  "time": {
+    "today": "Today",
+    "tomorrow": "Tomorrow",
+    "yesterday": "Yesterday",
+    "thisWeek": "This Week",
+    "lastWeek": "Last Week",
+    "thisMonth": "This Month",
+    "lastMonth": "Last Month",
+    "daysAgo": "{{count}} day ago",
+    "daysAgo_plural": "{{count}} days ago",
+    "hoursAgo": "{{count}} hour ago",
+    "hoursAgo_plural": "{{count}} hours ago",
+    "minutesAgo": "{{count}} minute ago",
+    "minutesAgo_plural": "{{count}} minutes ago",
+    "justNow": "Just now"
+  },
+  "language": {
+    "select": "Select Language",
+    "current": "Current Language",
+    "change": "Change Language",
+    "english": "English",
+    "hindi": "हिंदी",
+    "kannada": "ಕನ್ನಡ"
+  },
+  "dashboard": {
+    "deadlinePassed": "Deadline passed",
+    "remaining": "{{hours}}h {{minutes}}m remaining",
+    "selectMeals": "Menu for",
+    "noMenu": "No Menu Available",
+    "noMenuText": "The menu for tomorrow hasn't been published yet.",
+    "contactAdmin": "Please check back later or contact the canteen administrator.",
+    "breakfast": "Breakfast",
+    "lunch": "Lunch",
+    "snacks": "Snacks",
+    "noItems": "No items available",
+    "selected": "Selected",
+    "select": "Select",
+    "summary": "Your Selection Summary",
+    "mealsSelected": "Meals Selected",
+    "status": "Status",
+    "unsavedChanges": "⚠ Unsaved changes",
+    "saved": "✓ Saved",
+    "savePreferences": "Save Preferences",
+    "noChanges": "No Changes",
+    "helpText": "You can modify your selection until {{time}} today"
+  },
+  "notifications": {
+    "error": "Failed to load menu",
+    "enableReminders": "Notifications enabled! You will receive daily reminders at 8:00 AM.",
+    "enable": "Enable Notifications",
+    "maybeLater": "Maybe Later",
+    "saved": "Your meal preferences have been saved successfully."
+  },
+  "buttons": {
+    "done": "Got it!"
+  },
+  "workingMode": {
+    "title": "Where are you working today?",
+    "subtitle": "Select your working location for meal planning",
+    "office": "Working from Office",
+    "officeDesc": "I'll be at the office and need canteen meals",
+    "home": "Working from Home",
+    "homeDesc": "I'm working remotely and won't need canteen meals",
+    "confirm": "Confirm Selection",
+    "canChange": "You can change this until the deadline",
+    "deadlinePassed": "Deadline has passed. Cannot change working mode.",
+    "wfhTitle": "Working from Home Today",
+    "wfhMessage": "You've selected to work from home. No meal selection needed for today.",
+    "location": "Location",
+    "mealStatus": "Meal Status",
+    "noMealNeeded": "No canteen meal required",
+    "changeUntil": "Can change until",
+    "changeToOffice": "Change to Office Mode",
+    "canChangeHelp": "Changed your plans? You can switch to office mode until the deadline.",
+    "cannotChange": "Deadline passed. Cannot change working mode for today.",
+    "tipsTitle": "Working from Home Tips",
+    "tip1": "Stay connected with your team through regular check-ins",
+    "tip2": "Maintain a dedicated workspace for better productivity",
+    "tip3": "Take regular breaks and stay hydrated"
+  }
+}

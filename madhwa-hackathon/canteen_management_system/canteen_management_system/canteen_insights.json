@@ -1,0 +1,78 @@
+{
+  "generated_at": "2025-11-04T16:04:39.634520",
+  "data_period": {
+    "start": "2025-07-01",
+    "end": "2025-10-31",
+    "days": 122
+  },
+  "day_of_week": {
+    "best_day": "Thursday",
+    "worst_day": "Sunday",
+    "avg_by_day": {
+      "Monday": 53.32,
+      "Tuesday": 53.62,
+      "Wednesday": 53.46,
+      "Thursday": 54.28,
+      "Friday": 53.71,
+      "Saturday": 52.56,
+      "Sunday": 52.44
+    }
+  },
+  "weather_impact": {
+    "temperature_impact": {
+      "Cool": 55.63636363636363,
+      "Moderate": 52.265508684863526,
+      "Hot": 54.388888888888886
+    },
+    "rainy_day_effect": "+0.0%",
+    "avg_meals_rainy": 0,
+    "avg_meals_clear": 53.4
+  },
+  "holiday_impact": {
+    "holiday_effect": "+0.0%",
+    "avg_meals_holiday": 0,
+    "avg_meals_regular": 53.4
+  },
+  "item_popularity": {
+    "top_5_items": {
+      "301": {
+        "avg_count": 69.78,
+        "total_count": 8583.0
+      },
+      "201": {
+        "avg_count": 59.54,
+        "total_count": 7323.0
+      },
+      "202": {
+        "avg_count": 59.18,
+        "total_count": 7279.0
+      },
+      "101": {
+        "avg_count": 39.15,
+        "total_count": 4815.0
+      },
+      "102": {
+        "avg_count": 39.13,
+        "total_count": 4813.0
+      }
+    },
+    "total_items": 5
+  },
+  "temporal_trends": {
+    "monthly_averages": {
+      "2025-07": 53.0,
+      "2025-08": 53.12,
+      "2025-09": 53.65,
+      "2025-10": 53.65
+    },
+    "trend_direction": "increasing",
+    "trend_change": "+0.2%",
+    "recent_30d_avg": 53.63
+  },
+  "summary": [
+    "\ud83d\udcc5 Thursdays have highest demand, Sundays have lowest",
+    "\ud83c\udf27\ufe0f Rainy days change meal counts by +0.0%",
+    "\ud83c\udf89 Holidays change meal counts by +0.0%",
+    "\ud83d\udcc8 Demand is increasing (+0.2% over last 30 days)"
+  ]
+}

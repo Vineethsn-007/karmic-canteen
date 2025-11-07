@@ -1,0 +1,78 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Helper function to check if user is authenticated
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    // Helper function to check if user is admin
+    function isAdmin() {
+      return isAuthenticated() && 
+             get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin';
+    }
+    
+    // Users collection
+    match /users/{userId} {
+      // Users can read their own document, admins can read all
+      allow read: if isAuthenticated() && (request.auth.uid == userId || isAdmin());
+      // Only admins can create/update/delete users
+      allow write: if isAdmin();
+    }
+    
+    // Menus collection
+    match /menus/{menuId} {
+      // Everyone authenticated can read menus
+      allow read: if isAuthenticated();
+      // Only admins can create/update/delete menus
+      allow write: if isAdmin();
+    }
+    
+    // Meal Selections collection - with subcollection support
+    match /mealSelections/{date} {
+      // Allow admins to list dates
+      allow read: if isAdmin();
+      
+      match /users/{userId} {
+        // Users can read/write their own selections
+        allow read, write: if isAuthenticated() && request.auth.uid == userId;
+        // Admins can read all selections
+        allow read: if isAdmin();
+      }
+    }
+    
+    // Working Modes collection - with subcollection support
+    match /workingModes/{date} {
+      // Allow admins to list dates
+      allow read: if isAdmin();
+      
+      match /users/{userId} {
+        // Users can read/write their own working mode
+        allow read, write: if isAuthenticated() && request.auth.uid == userId;
+        // Admins can read all working modes
+        allow read: if isAdmin();
+      }
+    }
+    
+    // Reports collection
+    match /reports/{reportId} {
+      // Only admins can read and write reports
+      allow read, write: if isAdmin();
+    }
+    
+    // Settings collection
+    match /settings/{settingId} {
+      // Everyone authenticated can read settings
+      allow read: if isAuthenticated();
+      // Only admins can update settings
+      allow write: if isAdmin();
+    }
+    
+    // RFID Cards collection (if you have it)
+    match /rfidCards/{cardId} {
+      // Only admins can manage RFID cards
+      allow read, write: if isAdmin();
+    }
+  }
+}

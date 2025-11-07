@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CanteenAI Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            color: #667eea;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            color: #666;
+            font-size: 1.1em;
+        }
+        
+        .status-bar {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-around;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .status-item {
+            text-align: center;
+        }
+        
+        .status-item .label {
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 5px;
+        }
+        
+        .status-item .value {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #667eea;
+        }
+        
+        .status-badge {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+        
+        .status-online {
+            background: #10b981;
+            color: white;
+        }
+        
+        .status-offline {
+            background: #ef4444;
+            color: white;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .card h2 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+            display: flex;
+            align-items: center;
+        }
+        
+        .card h2::before {
+            content: '';
+            width: 4px;
+            height: 24px;
+            background: #667eea;
+            margin-right: 10px;
+            border-radius: 2px;
+        }
+        
+        .btn {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 600;
+            width: 100%;
+            margin-top: 10px;
+            transition: all 0.3s;
+        }
+        
+        .btn:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        .btn:active {
+            transform: translateY(0);
+        }
+        
+        .btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .btn-success {
+            background: #10b981;
+        }
+        
+        .btn-success:hover {
+            background: #059669;
+        }
+        
+        .btn-warning {
+            background: #f59e0b;
+        }
+        
+        .btn-warning:hover {
+            background: #d97706;
+        }
+        
+        .results {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        
+        .results pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            font-size: 0.9em;
+            color: #333;
+        }
+        
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .message {
+            padding: 12px;
+            border-radius: 8px;
+            margin-top: 10px;
+            display: none;
+        }
+        
+        .message.success {
+            background: #d1fae5;
+            color: #065f46;
+            border-left: 4px solid #10b981;
+        }
+        
+        .message.error {
+            background: #fee2e2;
+            color: #991b1b;
+            border-left: 4px solid #ef4444;
+        }
+        
+        .prediction-table {
+            width: 100%;
+            margin-top: 15px;
+            border-collapse: collapse;
+        }
+        
+        .prediction-table th,
+        .prediction-table td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .prediction-table th {
+            background: #f3f4f6;
+            font-weight: 600;
+            color: #374151;
+        }
+        
+        .prediction-table tr:hover {
+            background: #f9fafb;
+        }
+        
+        .insights-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .insights-list li {
+            padding: 10px;
+            margin: 5px 0;
+            background: #f3f4f6;
+            border-radius: 5px;
+            border-left: 3px solid #667eea;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🤖 CanteenAI Dashboard</h1>
+            <p>Intelligent Meal Demand Forecasting System</p>
+        </div>
+        
+        <div class="status-bar">
+            <div class="status-item">
+                <div class="label">System Status</div>
+                <div class="value">
+                    <span id="systemStatus" class="status-badge status-offline">Checking...</span>
+                </div>
+            </div>
+            <div class="status-item">
+                <div class="label">Total Records</div>
+                <div class="value" id="totalRecords">-</div>
+            </div>
+            <div class="status-item">
+                <div class="label">Menu Items</div>
+                <div class="value" id="menuItems">-</div>
+            </div>
+            <div class="status-item">
+                <div class="label">Models Trained</div>
+                <div class="value" id="modelsTrained">-</div>
+            </div>
+        </div>
+        
+        <div class="grid">
+            <!-- Data Management -->
+            <div class="card">
+                <h2>📊 Data Management</h2>
+                <button class="btn" onclick="updateData()">
+                    Update Data
+                </button>
+                <div id="dataMessage" class="message"></div>
+                <div id="dataLoading" class="loading">
+                    <div class="spinner"></div>
+                    <p>Loading data...</p>
+                </div>
+            </div>
+            
+            <!-- Model Training -->
+            <div class="card">
+                <h2>🎯 Model Training</h2>
+                <button class="btn btn-warning" onclick="trainModels()">
+                    Train Models
+                </button>
+                <div id="trainMessage" class="message"></div>
+                <div id="trainLoading" class="loading">
+                    <div class="spinner"></div>
+                    <p>Training models...</p>
+                </div>
+            </div>
+            
+            <!-- Quick Actions -->
+            <div class="card">
+                <h2>⚡ Quick Actions</h2>
+                <button class="btn btn-success" onclick="runFullPipeline()">
+                    Run Full Pipeline
+                </button>
+                <div id="pipelineMessage" class="message"></div>
+                <div id="pipelineLoading" class="loading">
+                    <div class="spinner"></div>
+                    <p>Running pipeline...</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="grid">
+            <!-- Next Day Prediction -->
+            <div class="card">
+                <h2>🔮 Next Day Prediction</h2>
+                <button class="btn" onclick="predictNextDay()">
+                    Generate Prediction
+                </button>
+                <div id="nextDayMessage" class="message"></div>
+                <div id="nextDayLoading" class="loading">
+                    <div class="spinner"></div>
+                    <p>Generating predictions...</p>
+                </div>
+                <div id="nextDayResults" class="results" style="display:none;"></div>
+            </div>
+            
+            <!-- Weekly Forecast -->
+            <div class="card">
+                <h2>📅 Weekly Forecast</h2>
+                <button class="btn" onclick="predictWeekly()">
+                    Generate 7-Day Forecast
+                </button>
+                <div id="weeklyMessage" class="message"></div>
+                <div id="weeklyLoading" class="loading">
+                    <div class="spinner"></div>
+                    <p>Generating forecast...</p>
+                </div>
+                <div id="weeklyResults" class="results" style="display:none;"></div>
+            </div>
+        </div>
+        
+        <!-- Insights -->
+        <div class="card">
+            <h2>💡 Insights & Trends</h2>
+            <button class="btn" onclick="getInsights()">
+                Analyze Trends
+            </button>
+            <div id="insightsMessage" class="message"></div>
+            <div id="insightsLoading" class="loading">
+                <div class="spinner"></div>
+                <p>Analyzing trends...</p>
+            </div>
+            <div id="insightsResults" class="results" style="display:none;"></div>
+        </div>
+    </div>
+    
+    <script>
+        // Load status on page load
+        window.onload = function() {
+            loadStatus();
+        };
+        
+        async function loadStatus() {
+            try {
+                const response = await fetch('/api/status');
+                const data = await response.json();
+                
+                document.getElementById('systemStatus').textContent = data.status.toUpperCase();
+                document.getElementById('systemStatus').className = 
+                    'status-badge ' + (data.status === 'online' ? 'status-online' : 'status-offline');
+                
+                if (data.data_stats) {
+                    document.getElementById('totalRecords').textContent = data.data_stats.total_records;
+                    document.getElementById('menuItems').textContent = data.data_stats.menu_items;
+                }
+                
+                document.getElementById('modelsTrained').textContent = data.models_trained ? 'Yes' : 'No';
+            } catch (error) {
+                console.error('Error loading status:', error);
+            }
+        }
+        
+        async function updateData() {
+            showLoading('dataLoading');
+            hideMessage('dataMessage');
+            
+            try {
+                const response = await fetch('/api/update-data', { method: 'POST' });
+                const data = await response.json();
+                
+                hideLoading('dataLoading');
+                
+                if (data.success) {
+                    showMessage('dataMessage', data.message, 'success');
+                    loadStatus();
+                } else {
+                    showMessage('dataMessage', data.message, 'error');
+                }
+            } catch (error) {
+                hideLoading('dataLoading');
+                showMessage('dataMessage', 'Error: ' + error.message, 'error');
+            }
+        }
+        
+        async function trainModels() {
+            showLoading('trainLoading');
+            hideMessage('trainMessage');
+            
+            try {
+                const response = await fetch('/api/train', { method: 'POST' });
+                const data = await response.json();
+                
+                hideLoading('trainLoading');
+                
+                if (data.success) {
+                    showMessage('trainMessage', 
+                        `Trained ${data.models_trained} models | Avg MAE: ${data.avg_mae.toFixed(2)} | Confidence: ${(data.avg_confidence * 100).toFixed(1)}%`, 
+                        'success');
+                    loadStatus();
+                } else {
+                    showMessage('trainMessage', data.message, 'error');
+                }
+            } catch (error) {
+                hideLoading('trainLoading');
+                showMessage('trainMessage', 'Error: ' + error.message, 'error');
+            }
+        }
+        
+        async function predictNextDay() {
+            showLoading('nextDayLoading');
+            hideMessage('nextDayMessage');
+            document.getElementById('nextDayResults').style.display = 'none';
+            
+            try {
+                const response = await fetch('/api/predict-next-day', { method: 'POST' });
+                const data = await response.json();
+                
+                hideLoading('nextDayLoading');
+                
+                if (data.success) {
+                    showMessage('nextDayMessage', 
+                        `Predicted ${data.total_meals} meals for ${data.date} | Confidence: ${(data.avg_confidence * 100).toFixed(1)}%`, 
+                        'success');
+                    
+                    // Display predictions table
+                    let html = '<table class="prediction-table"><tr><th>Item ID</th><th>Predicted</th><th>Confidence</th><th>Range</th></tr>';
+                    data.predictions.forEach(pred => {
+                        html += `<tr>
+                            <td>${pred.menu_item_id}</td>
+                            <td>${pred.predicted_count}</td>
+                            <td>${(pred.confidence * 100).toFixed(1)}%</td>
+                            <td>${pred.lower_bound}-${pred.upper_bound}</td>
+                        </tr>`;
+                    });
+                    html += '</table>';
+                    
+                    document.getElementById('nextDayResults').innerHTML = html;
+                    document.getElementById('nextDayResults').style.display = 'block';
+                } else {
+                    showMessage('nextDayMessage', data.message, 'error');
+                }
+            } catch (error) {
+                hideLoading('nextDayLoading');
+                showMessage('nextDayMessage', 'Error: ' + error.message, 'error');
+            }
+        }
+        
+        async function predictWeekly() {
+            showLoading('weeklyLoading');
+            hideMessage('weeklyMessage');
+            document.getElementById('weeklyResults').style.display = 'none';
+            
+            try {
+                const response = await fetch('/api/predict-weekly', { 
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ days: 7 })
+                });
+                const data = await response.json();
+                
+                hideLoading('weeklyLoading');
+                
+                if (data.success) {
+                    showMessage('weeklyMessage', 
+                        `Generated ${data.total_predictions} predictions | Total: ${data.total_meals} meals`, 
+                        'success');
+                    
+                    // Display daily summary
+                    let html = '<table class="prediction-table"><tr><th>Date</th><th>Total Meals</th><th>Confidence</th></tr>';
+                    data.daily_summary.forEach(day => {
+                        html += `<tr>
+                            <td>${day.date}</td>
+                            <td>${day.predicted_count}</td>
+                            <td>${(day.confidence * 100).toFixed(1)}%</td>
+                        </tr>`;
+                    });
+                    html += '</table>';
+                    
+                    document.getElementById('weeklyResults').innerHTML = html;
+                    document.getElementById('weeklyResults').style.display = 'block';
+                } else {
+                    showMessage('weeklyMessage', data.message, 'error');
+                }
+            } catch (error) {
+                hideLoading('weeklyLoading');
+                showMessage('weeklyMessage', 'Error: ' + error.message, 'error');
+            }
+        }
+        
+        async function getInsights() {
+            showLoading('insightsLoading');
+            hideMessage('insightsMessage');
+            document.getElementById('insightsResults').style.display = 'none';
+            
+            try {
+                const response = await fetch('/api/insights');
+                const data = await response.json();
+                
+                hideLoading('insightsLoading');
+                
+                if (data.success) {
+                    showMessage('insightsMessage', 'Insights generated successfully', 'success');
+                    
+                    // Display insights
+                    let html = '<ul class="insights-list">';
+                    if (data.insights.summary) {
+                        data.insights.summary.forEach(insight => {
+                            html += `<li>${insight}</li>`;
+                        });
+                    }
+                    html += '</ul>';
+                    
+                    document.getElementById('insightsResults').innerHTML = html;
+                    document.getElementById('insightsResults').style.display = 'block';
+                } else {
+                    showMessage('insightsMessage', data.message, 'error');
+                }
+            } catch (error) {
+                hideLoading('insightsLoading');
+                showMessage('insightsMessage', 'Error: ' + error.message, 'error');
+            }
+        }
+        
+        async function runFullPipeline() {
+            showLoading('pipelineLoading');
+            hideMessage('pipelineMessage');
+            
+            try {
+                const response = await fetch('/api/run-pipeline', { method: 'POST' });
+                const data = await response.json();
+                
+                hideLoading('pipelineLoading');
+                
+                if (data.success) {
+                    showMessage('pipelineMessage', 
+                        `Pipeline completed! ${data.results.data_records} records processed, ${data.results.next_day_predictions} predictions generated`, 
+                        'success');
+                    loadStatus();
+                } else {
+                    showMessage('pipelineMessage', data.message, 'error');
+                }
+            } catch (error) {
+                hideLoading('pipelineLoading');
+                showMessage('pipelineMessage', 'Error: ' + error.message, 'error');
+            }
+        }
+        
+        function showLoading(id) {
+            document.getElementById(id).style.display = 'block';
+        }
+        
+        function hideLoading(id) {
+            document.getElementById(id).style.display = 'none';
+        }
+        
+        function showMessage(id, message, type) {
+            const el = document.getElementById(id);
+            el.textContent = message;
+            el.className = 'message ' + type;
+            el.style.display = 'block';
+        }
+        
+        function hideMessage(id) {
+            document.getElementById(id).style.display = 'none';
+        }
+    </script>
+</body>
+</html>

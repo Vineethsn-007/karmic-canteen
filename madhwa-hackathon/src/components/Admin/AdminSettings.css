@@ -1,0 +1,264 @@
+/* src/components/Admin/AdminSettings.css */
+
+.admin-settings {
+  width: 100%;
+  margin: 0;
+}
+
+.settings-header {
+  margin-bottom: 24px;
+}
+
+.settings-header h2 {
+  font-size: 28px;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.settings-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 32px;
+  max-width: 800px;
+}
+
+.setting-section {
+  margin-bottom: 32px;
+}
+
+.section-header {
+  margin-bottom: 32px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid var(--border);
+}
+
+.section-header h3 {
+  font-size: 20px;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.section-description {
+  color: var(--text-secondary);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Time Display */
+.time-display {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-hover) 100%);
+  color: white;
+  padding: 24px;
+  border-radius: 12px;
+  margin-bottom: 32px;
+}
+
+.time-icon {
+  font-size: 48px;
+  width: 72px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+}
+
+.time-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.time-text .label {
+  font-size: 14px;
+  opacity: 0.9;
+  font-weight: 500;
+}
+
+.time-text .time-value {
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* Time Inputs */
+.time-picker-container {
+  margin-bottom: 32px;
+}
+
+.time-inputs {
+  display: flex;
+  align-items: flex-end;
+  gap: 16px;
+  margin-bottom: 24px;
+  justify-content: center;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.input-group label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.input-group input {
+  width: 120px;
+  padding: 12px 16px;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  font-size: 24px;
+  font-weight: 600;
+  text-align: center;
+  color: var(--text);
+  transition: border-color 0.3s;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+.input-hint {
+  font-size: 12px;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+.time-separator {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 24px;
+}
+
+/* Quick Presets */
+.quick-presets {
+  background: rgba(240, 228, 145, 0.15);
+  border: 1px solid var(--accent-color);
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.presets-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.preset-buttons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.preset-buttons .btn-sm {
+  padding: 8px 16px;
+  font-size: 14px;
+}
+
+/* Save Section */
+.save-section {
+  display: flex;
+  justify-content: center;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  margin-top: 32px;
+}
+
+.btn-large {
+  padding: 14px 40px;
+  font-size: 16px;
+  min-width: 200px;
+}
+
+/* Info Box */
+.info-box {
+  display: flex;
+  gap: 16px;
+  background: rgba(33, 128, 141, 0.05);
+  border: 1px solid rgba(33, 128, 141, 0.2);
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 32px;
+}
+
+.info-icon {
+  font-size: 32px;
+  flex-shrink: 0;
+}
+
+.info-content {
+  flex: 1;
+}
+
+.info-content strong {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--text);
+  font-size: 15px;
+}
+
+.info-content ul {
+  margin: 0;
+  padding-left: 20px;
+  color: var(--text-secondary);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.info-content li {
+  margin-bottom: 4px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .settings-card {
+    padding: 20px;
+  }
+
+  .time-display {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .time-text .time-value {
+    font-size: 28px;
+  }
+
+  .time-inputs {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .input-group input {
+    width: 100%;
+  }
+
+  .time-separator {
+    display: none;
+  }
+
+  .preset-buttons {
+    flex-direction: column;
+  }
+
+  .preset-buttons .btn-sm {
+    width: 100%;
+  }
+
+  .info-box {
+    flex-direction: column;
+    text-align: center;
+  }
+}
