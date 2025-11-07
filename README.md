@@ -1,68 +1,164 @@
-# 🍽️ Karmic Canteen App
+# 🍽️ Karmic Canteen – Smart Meal Management System
 
-[![Build Status](https://img.shields.io/badge/build-passing-brightgreen)]()
-[![License](https://img.shields.io/badge/license-MIT-blue)]()
-
-A **Flutter-based comprehensive meal management and event engagement system** for Karmic employees, featuring both **mobile** and **web** frontends.
+> 🥈 **2nd Prize Winner at Madhwa Hackathon**  
+> An intelligent, multilingual, and socially impactful canteen management system powered by AI, RFID, and real-time analytics.
 
 ---
 
-## 📘 Table of Contents
+## ✨ Overview
 
-- [Project Overview](#project-overview)
-- [Features](#features)
-- [Tech Stack](#tech-stack)
-- [Setup Instructions](#setup-instructions)
-- [Project Structure](#project-structure)
-- [Usage Guide](#usage-guide)
-- [Contributing](#contributing)
-- [License](#license)
+**Karmic Canteen** is a modern meal management system designed to reduce food waste, simplify meal operations, and empower NGOs through surplus food distribution.  
+Built with **React, Firebase, and Python ML models**, it integrates **RFID-based meal collection**, **multilingual interfaces**, and **AI-driven predictions** for smarter food management.
 
 ---
 
-## 🧩 Project Overview
+## 🌍 Key Features
 
-The **Karmic Canteen App** enables employees to select and manage daily or weekly meals — including **breakfast, lunch, snacks, and dinner** — with flexible **work mode settings (Office/WFH)**.
+### 🗣️ Multilingual Support
+- Supports **English**, **Hindi**, and **Kannada**
+- Instant language switching across the app
+- Auto-detection of browser language preference
+- Professionally translated UI content
 
-The **Admin Panel** offers real-time analytics, reports, and broadcast capabilities for events and food donation drives.  
-Built with multi-language support for accessibility across English, Hindi, and Kannada.
+### 🔐 Role-Based Access Control
+| Role | Capabilities |
+|------|---------------|
+| **Employee** | Browse menu, select meals, view preferences |
+| **Admin** | Manage menus, deadlines, and analytics |
+| **NGO** | Track and collect surplus meals |
+| **All Users** | Secure login via Firebase Authentication |
 
----
+### 🤖 AI-Powered Intelligence
+- Predicts next-day popular meals  
+- Tracks eating patterns and preferences  
+- Detects surplus food for donation  
+- Generates weekly demand forecasts  
 
-## 🚀 Features
+### 📱 RFID Meal Collection
+- RFID card-based meal verification  
+- Real-time meal tracking and updates  
+- Prevents duplicate collection  
+- Auto-syncs with inventory counts  
 
-- 📅 **Daily & Weekly Meal Planning**
-- 🏢 **Per-day Work Mode** (Office/WFH)
-- ⏰ **Meal Reminders & Deadlines**
-- 🎉 **Festival & Event Broadcasts** with RSVP
-- 📊 **Real-time Analytics & CSV Report Generation**
-- 🤝 **Food Donation Drive Management**
-- 🌐 **Multilingual Support** (English / हिंदी / ಕನ್ನಡ)
-- 📱 **Separate Flutter Mobile & Web Frontends**
+### 🌱 NGO Food Distribution
+- Access real-time surplus inventory  
+- Schedule food collection  
+- Track social impact via reports  
+- Secure and transparent management  
+
+### 📊 Admin Dashboard
+- **Menu Management:** Create, update, and publish menus  
+- **Analytics & Reports:** Visualize meal data and patterns  
+- **User Management:** Handle employee & NGO accounts  
+- **Prediction Insights:** AI-based meal forecasts  
+- **Deadline Control:** Set and manage meal selection cutoffs  
+
+### 🎨 Modern UI/UX
+- Professional **blue theme (#0066cc)**  
+- Glassmorphism design with smooth animations  
+- Fully responsive for desktop, tablet, and mobile  
+- Accessible and user-friendly interface  
 
 ---
 
 ## 🛠️ Tech Stack
 
-- **Frontend:** Flutter & Dart  
-- **Backend:** Firebase Firestore, Firebase Cloud Messaging (FCM)  
-- **State Management:** Provider  
-- **Utilities:** intl (date/time formatting), fl_chart (analytics visualization)
+### Frontend
+- **React 19.1.1** – UI framework  
+- **Vite 7.1.12** – Lightning-fast build tool  
+- **React Router 7.9.5** – Navigation  
+- **i18next 25.6.0** – Internationalization  
+- **Vanilla CSS + Variables** – Dynamic theming  
+
+### Backend & Services
+- **Firebase Authentication** – Secure login  
+- **Firestore** – Real-time database  
+- **Cloud Functions** – Serverless logic  
+- **Python ML Models** – Predictive engine  
+- **RFID Integration** – Hardware-based meal validation  
 
 ---
 
-## ⚙️ Setup Instructions
+## 👥 User Workflows
 
-### 🧱 Prerequisites
+### 👤 Employee
+1. Login via Firebase  
+2. View daily menu (auto in preferred language)  
+3. Select meals before the deadline  
+4. Scan RFID to collect meals  
+5. View meal history and analytics  
 
-- Latest **Flutter SDK (Stable Channel)**  
-- **Firebase project** configured with Firestore & FCM  
-- IDE such as **VS Code** or **Android Studio**
+### 👨‍💼 Admin
+1. Manage menus and meal deadlines  
+2. Monitor real-time analytics  
+3. Generate reports and forecasts  
+4. Track surplus food  
+5. Manage employee & NGO accounts  
+
+### 🤝 NGO Partner
+1. View available surplus food  
+2. Schedule collection  
+3. Track distributed meals  
+4. Generate impact reports  
 
 ---
 
-### 📦 Clone Repositories
+## 🧩 Smart Features
+
+- **Deadline Countdown:** Prevents late selections  
+- **Duplicate Prevention:** RFID-based meal validation  
+- **Real-time Updates:** Firestore-powered live sync  
+- **AI Insights:** Predictive analytics for menu planning  
+
+---
+
+## 🔒 Security
+
+- **Firebase Authentication:** Secure login  
+- **Role-Based Access:** Controlled data access  
+- **RFID Verification:** Hardware-level validation  
+- **Firestore Rules:** Enforced database security  
+- **Encrypted Data Transmission:** Safe communication  
+
+---
+
+## 📈 Performance & Accessibility
+
+- ⚡ **Fast Load Times:** Vite-optimized build  
+- 🔄 **Real-Time Updates:** Firestore sync  
+- 📱 **Responsive:** Works seamlessly on all screens  
+- ♿ **Accessible:** WCAG AA compliant  
+
+---
+
+## 🌐 Supported Languages
+
+| Language | Code | Status |
+|-----------|------|--------|
+| English | en | ✅ Complete |
+| Kannada | ka | ✅ Complete |
+| Hindi | hi | ✅ Complete |
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js **v16+**
+- Firebase project setup  
+- Python **3.8+** (for ML models)
+
+### Installation
 
 ```bash
-git clone https://github.com/your-username/flutter-frontend.git
-git clone https://github.com/your-username/web-frontend.git
+# Navigate to frontend directory
+cd madhwa-hackathon/frontend
+
+# Install dependencies
+npm install
+
+# Start the development server
+npm run dev
+
+# Build for production
+npm run build
